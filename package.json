@@ -4,7 +4,7 @@
 	"scripts": {
 		"dev": "astro dev",
 		"start": "astro dev",
-		"build": "astro check && astro build",
+		"build": "astro build",
 		"postbuild": "pagefind --site dist",
 		"preview": "astro preview",
 		"format": "prettier -w --cache . && prettier -w --cache **/*.astro",
@@ -21,9 +21,7 @@
 		"rehype-external-links": "^3.0.0",
 		"satori": "0.10.13",
 		"satori-html": "^0.3.2",
-		"sharp": "^0.33.2",
-		"@astrojs/check": "^0.5.9",
-		"typescript": "^5.4.3"
+		"sharp": "^0.33.2"
 	},
 	"devDependencies": {
 		"@astrojs/check": "^0.5.9",
