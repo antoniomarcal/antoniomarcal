@@ -1,0 +1,35 @@
+---
+import aboutImg from "@/assets/avatar.png";
+import PageLayout from "@/layouts/Base.astro";
+import { Image } from "astro:assets";
+
+const meta = {
+	description: "I'm a starter",
+	title: "About",
+};
+---
+
+<PageLayout meta={meta}>
+	<div class='space-y-6'>
+		<h1 class='title'>About</h1>
+		<p>
+			Ahoy there! I'm Antonio Marçal, a passionate sailor with an insatiable thirst for adventure on
+			the open seas and a fervent coder with a love for crafting elegant solutions in the digital
+			realm..
+		</p>
+		<p>
+			When I'm not chasing the horizon, you'll often find me immersed in the world of programming.
+			From deciphering complex algorithms to architecting software systems, I thrive on the creative
+			process of turning lines of code into innovative solutions. Much like sailing, programming
+			presents its own set of challenges and rewards, requiring a blend of precision,
+			problem-solving, and a touch of imagination.
+		</p>
+		<p>
+			If you share a love for sailing, programming, or simply a thirst for discovery, I'd be
+			delighted to embark on this journey together. Fair winds and happy coding! ⛵🖥️
+		</p>
+		<div class='flex border-spacing-3 justify-center'>
+			<Image alt='avatar' fetchpriority='high' loading='eager' src={aboutImg} />
+		</div>
+	</div>
+</PageLayout>
