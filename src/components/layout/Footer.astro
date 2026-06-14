@@ -5,19 +5,21 @@ const year = new Date().getFullYear();
 ---
 
 <footer
-	class='mt-auto flex w-full flex-col items-center justify-center gap-y-2 pb-4 pt-20 text-center align-top font-semibold text-gray-600 dark:text-gray-400 sm:flex-row sm:justify-between sm:text-xs'
+	class='mt-auto flex w-full flex-col items-center justify-center gap-y-2 border-t border-border pb-6 pt-8 text-center align-top font-sans text-xs text-text-muted sm:flex-row sm:justify-between'
 >
 	<div class='me-0 sm:me-4'>
-		&copy; {siteConfig.author}
-		{year}.<span class='inline-block'>&nbsp;🚀&nbsp;</span>
+		&copy; {siteConfig.author} {year}
 	</div>
 	<nav
 		aria-label='More on this site'
-		class='flex gap-x-2 sm:gap-x-0 sm:divide-x sm:divide-gray-500'
+		class='flex gap-x-1 sm:gap-x-0 sm:divide-x sm:divide-border'
 	>
 		{
 			menuLinks.map((link) => (
-				<a class='px-4 py-2 sm:py-0 sm:hover:text-textColor sm:hover:underline' href={link.path}>
+				<a
+					class='px-4 py-2 transition-colors hover:text-accent sm:py-0'
+					href={link.path}
+				>
 					{link.title}
 				</a>
 			))

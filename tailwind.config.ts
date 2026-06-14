@@ -24,16 +24,27 @@ export default {
 		extend: {
 			colors: {
 				bgColor: "hsl(var(--theme-bg) / <alpha-value>)",
+				"bg-elevated": "hsl(var(--theme-bg-elevated) / <alpha-value>)",
+				"bg-sunken": "hsl(var(--theme-bg-sunken) / <alpha-value>)",
+				"bg-inverse": "hsl(var(--theme-bg-inverse) / <alpha-value>)",
 				textColor: "hsl(var(--theme-text) / <alpha-value>)",
+				"text-muted": "hsl(var(--theme-text-muted) / <alpha-value>)",
+				"text-subtle": "hsl(var(--theme-text-subtle) / <alpha-value>)",
+				"text-inverse": "hsl(var(--theme-text-inverse) / <alpha-value>)",
 				link: "hsl(var(--theme-link) / <alpha-value>)",
 				accent: "hsl(var(--theme-accent) / <alpha-value>)",
 				"accent-2": "hsl(var(--theme-accent-2) / <alpha-value>)",
+				"accent-hover": "hsl(var(--theme-accent-hover) / <alpha-value>)",
+				"accent-soft": "hsl(var(--theme-accent-soft) / <alpha-value>)",
 				quote: "hsl(var(--theme-quote) / <alpha-value>)",
+				border: "hsl(var(--theme-border) / <alpha-value>)",
+				"border-subtle": "hsl(var(--theme-border-subtle) / <alpha-value>)",
+				"border-strong": "hsl(var(--theme-border-strong) / <alpha-value>)",
 			},
 			fontFamily: {
-				// Add any custom fonts here
-				sans: [...fontFamily.sans],
-				serif: [...fontFamily.serif],
+				sans: ["Geist", "Inter", ...fontFamily.sans],
+				serif: ["Instrument Serif", ...fontFamily.serif],
+				mono: ["Geist Mono", "JetBrains Mono", ...fontFamily.mono],
 			},
 			transitionProperty: {
 				height: "height",
@@ -46,13 +57,13 @@ export default {
 					css: {
 						"--tw-prose-body": theme("colors.textColor / 1"),
 						"--tw-prose-headings": theme("colors.accent-2 / 1"),
-						"--tw-prose-links": theme("colors.textColor / 1"),
+						"--tw-prose-links": theme("colors.link / 1"),
 						"--tw-prose-bold": theme("colors.textColor / 1"),
-						"--tw-prose-bullets": theme("colors.textColor / 1"),
+						"--tw-prose-bullets": theme("colors.text-muted / 1"),
 						"--tw-prose-quotes": theme("colors.quote / 1"),
 						"--tw-prose-code": theme("colors.textColor / 1"),
-						"--tw-prose-hr": "0.5px dashed #666",
-						"--tw-prose-th-borders": "#666",
+						"--tw-prose-hr": "1px solid hsl(var(--theme-border))",
+						"--tw-prose-th-borders": "hsl(var(--theme-border))",
 					},
 				},
 				DEFAULT: {
@@ -61,30 +72,36 @@ export default {
 							"@apply cactus-link no-underline": "",
 						},
 						strong: {
-							fontWeight: "700",
+							fontWeight: "600",
 						},
 						code: {
-							border: "1px dotted #666",
-							borderRadius: "2px",
+							border: "1px solid hsl(var(--theme-border))",
+							borderRadius: "4px",
+							backgroundColor: "hsl(var(--theme-bg-sunken))",
+							padding: "0.125rem 0.375rem",
 						},
 						blockquote: {
-							borderLeftWidth: "0",
+							borderLeftWidth: "2px",
+							borderLeftColor: "hsl(var(--theme-accent))",
+							color: "hsl(var(--theme-text-muted))",
+							fontStyle: "normal",
 						},
 						hr: {
-							borderTopStyle: "dashed",
+							borderTopStyle: "solid",
+							borderColor: "hsl(var(--theme-border))",
 						},
 						thead: {
 							borderBottomWidth: "none",
 						},
 						"thead th": {
-							fontWeight: "700",
-							borderBottom: "1px dashed #666",
+							fontWeight: "600",
+							borderBottom: "1px solid hsl(var(--theme-border))",
 						},
 						"tbody tr": {
 							borderBottomWidth: "none",
 						},
 						tfoot: {
-							borderTop: "1px dashed #666",
+							borderTop: "1px solid hsl(var(--theme-border))",
 						},
 						sup: {
 							"@apply ms-0.5": "",
@@ -120,12 +137,12 @@ export default {
 		plugin(function ({ addComponents }) {
 			addComponents({
 				".cactus-link": {
-					"@apply bg-[size:100%_6px] bg-bottom bg-repeat-x": {},
-					backgroundImage:
-						"linear-gradient(transparent,transparent 5px,hsl(var(--theme-text)) 5px,hsl(var(--theme-text)))",
+					color: "hsl(var(--theme-link))",
+					textDecoration: "none",
+					borderBottom: "1px solid hsl(var(--theme-border))",
+					transition: "border-color 120ms ease, color 120ms ease",
 					"&:hover": {
-						backgroundImage:
-							"linear-gradient(transparent,transparent 4px,hsl(var(--theme-link)) 4px,hsl(var(--theme-link)))",
+						borderBottomColor: "hsl(var(--theme-link))",
 					},
 				},
 				".title": {

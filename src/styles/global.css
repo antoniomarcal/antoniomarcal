@@ -6,23 +6,46 @@
 	:root,
 	:root[data-theme="light"] {
 		color-scheme: light;
-		/* https://tailwindcss.com/docs/customizing-colors#using-css-variables */
-		--theme-bg: 0deg 0% 98%;
-		--theme-link: 172deg 18% 41%;
-		--theme-text: 203deg 11% 15%;
-		--theme-accent: 351deg 66% 48%;
-		--theme-accent-2: 0deg 0% 7%;
-		--theme-quote: 351deg 66% 48%;
+		/* AssemblyAI Design System — Light */
+		--theme-bg: 40 48% 93%;
+		--theme-bg-elevated: 41 55% 96%;
+		--theme-bg-sunken: 40 43% 88%;
+		--theme-bg-inverse: 43 14% 10%;
+		--theme-text: 43 14% 10%;
+		--theme-text-muted: 31 28% 43%;
+		--theme-text-subtle: 45 2% 46%;
+		--theme-text-inverse: 41 55% 96%;
+		--theme-link: 18 55% 50%;
+		--theme-accent: 18 55% 50%;
+		--theme-accent-2: 43 14% 10%;
+		--theme-accent-hover: 17 63% 41%;
+		--theme-accent-soft: 24 77% 95%;
+		--theme-quote: 18 55% 50%;
+		--theme-border: 40 40% 80%;
+		--theme-border-subtle: 40 43% 88%;
+		--theme-border-strong: 32 34% 56%;
 	}
 
 	:root[data-theme="dark"] {
 		color-scheme: dark;
-		--theme-bg: 210deg 6% 12%;
-		--theme-link: 330deg 49% 67%;
-		--theme-text: 220deg 3% 79%;
-		--theme-accent: 159deg 64% 45%;
-		--theme-accent-2: 0deg 0% 93%;
-		--theme-quote: 102deg 100% 86%;
+		/* AssemblyAI Design System — Dark */
+		--theme-bg: 43 14% 10%;
+		--theme-bg-elevated: 39 10% 15%;
+		--theme-bg-sunken: 39 10% 21%;
+		--theme-bg-inverse: 41 55% 96%;
+		--theme-text: 41 55% 96%;
+		--theme-text-muted: 32 34% 56%;
+		--theme-text-subtle: 45 2% 46%;
+		--theme-text-inverse: 43 14% 10%;
+		--theme-link: 22 66% 67%;
+		--theme-accent: 18 55% 50%;
+		--theme-accent-2: 41 55% 96%;
+		--theme-accent-hover: 22 66% 67%;
+		--theme-accent-soft: 30 26% 18%;
+		--theme-quote: 22 66% 67%;
+		--theme-border: 39 10% 21%;
+		--theme-border-subtle: 39 10% 15%;
+		--theme-border-strong: 28 25% 28%;
 	}
 
 	html {
@@ -30,6 +53,6 @@
 	}
 
 	body {
-		@apply mx-auto flex min-h-screen max-w-3xl flex-col bg-bgColor px-8 pt-16 font-mono text-sm font-normal text-textColor antialiased;
+		@apply mx-auto flex min-h-screen max-w-3xl flex-col bg-bgColor px-8 pt-16 font-sans text-sm font-normal text-textColor antialiased;
 	}
 }
